@@ -1,0 +1,47 @@
+<form>
+  <label for="search">Search By User's Name:</label>
+  <input type="text" id="search" #search (keyup)="filter(search)" />
+</form>
+
+<div *ngIf="filtered" class="table">
+  <div class="row title">
+    <div>
+      <h2>ID</h2>
+    </div>
+    <div>
+      <h2>Name</h2>
+    </div>
+    <div>
+      <h2>Username</h2>
+    </div>
+    <div>
+      <h2>Email</h2>
+    </div>
+    <div>
+      <h2>Phone</h2>
+    </div>
+    <div>
+      <h2>Website</h2>
+    </div>
+  </div>
+  <div *ngFor="let data of filtered" class="row">
+    <div>
+      <p>{{ data.id }}</p>
+    </div>
+    <div>
+      <p>{{ data.name }}</p>
+    </div>
+    <div>
+      <p>{{ data.username }}</p>
+    </div>
+    <div>
+      <p>{{ data.email }}</p>
+    </div>
+    <div>
+      <p>{{ data.phone }}</p>
+    </div>
+    <div>
+      <p>{{ data.website }}</p>
+    </div>
+  </div>
+</div>
